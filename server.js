@@ -24,6 +24,8 @@ app.use(passport.session());
 app.get("/", (req, res) => {
   res.json({ message: "Hi, ready to rolls" });
 });
+require("./app/routes/inncode/support.routes.js")(app);
+require("./app/routes/inncode/projectDiscussion.routes.js")(app);
 
 // listen for requests
 //  require('./app/routes/note.routes.js')(app);
