@@ -2,8 +2,10 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 const connectdb = require("./config/db.connection");
+const cors = require("cors");
 // create express app
 const app = express();
+app.use(cors());
 connectdb();
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -36,6 +38,6 @@ require("./app/routes/user.routes.js")(app);
 //  require('./app/routes/product.routes.js')(app);
 //app.use('/create', require('./app/routes/user.routes.js'));
 
-app.listen(process.env.PORT || 3000, () => {
+app.listen(process.env.PORT || 3300, () => {
   console.log("Server is listening on port 3000");
 });
