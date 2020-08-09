@@ -26,6 +26,8 @@ app.use(passport.session());
 app.get("/", (req, res) => {
   res.json({ message: "Hi, ready to rolls" });
 });
+
+
 require("./app/routes/inncode/support.routes.js")(app);
 require("./app/routes/inncode/projectDiscussion.routes.js")(app);
 
@@ -34,10 +36,13 @@ require("./app/routes/inncode/projectDiscussion.routes.js")(app);
 //  require('./app/routes/contactus.routes.js')(app);
 require("./app/routes/iot.routes.js")(app);
 require("./app/routes/user.routes.js")(app);
+require("./app/routes/inncode/userPurchase.routes")(app);
+require("./app/routes/inncode/purchaseManage.routes")(app);
+require("./app/routes/inncode/purchaseAssigned.routes")(app);
 //  require('./app/routes/category.routes.js')(app);
 //  require('./app/routes/product.routes.js')(app);
 //app.use('/create', require('./app/routes/user.routes.js'));
 
 app.listen(process.env.PORT || 3300, () => {
-  console.log("Server is listening on port 3000");
+  console.log("Server is listening on port 3300");
 });
